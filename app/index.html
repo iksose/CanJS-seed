@@ -1,28 +1,46 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My AngularJS App</title>
+  <title>You Can Do It</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://canjs.com/release/1.1.6-pre/can.jquery.js"></script>
+  <script src="http://canjs.com/release/latest/can.view.mustache.js"></script>
+  <script src="http://canjs.com/release/latest/can.fixture.js"></script>
+  <script src="http://canjs.com/release/1.1.6/can.object.js"></script>
+
+
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+<h2>Today's to-dos</h2>
+<div id="editor"></div>
+<div id="board"></div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+<script type="text/mustache" id="todoBoard">
+{{#if length}}
+<ul>
+{{#this}}
+    <li {{data 'todo'}}>
+    	<input type="checkbox" {{#if done}}checked="checked"{{/if}}/>
+    	<span class="description{{#if done}} done{{/if}}">{{description}}</span>
+    	<span class="delete">×</span>
+    </li>
+{{/this}}
+</ul>
+{{else}}
+<div class="no-todos">No to-dos today. Youre free!</div>
+{{/if}}
+</script>  
+<script type="text/mustache" id="todoEditor">
+    <input type="text" value="{{description}}"/>
+    <img class="spinner hidden" src="spinny.gif"/>
+</script>
+    
+<script src="/js/script.js"></script>    
+
+
 </body>
 </html>
