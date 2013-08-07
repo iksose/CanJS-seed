@@ -30,11 +30,4 @@ your browser.
         app.js          --> application
         controllers.js  --> application controllers
         directives.js   --> application directives
-        filters.js      --> custom angular filters
-        services.js     --> custom angular services
-      lib/              --> angular and 3rd party javascript libraries
-        angular/
-          angular.js        --> the latest angular js
-          angular.min.js    --> the latest minified angular js
-          angular-*.js      --> angular add-on modules
-          version.txt       --> version number
+      views/              --> Mustache templates
