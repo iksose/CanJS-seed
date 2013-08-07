@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>You Can Do It</title>
   <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="http://canjs.com/release/1.1.6-pre/can.jquery.js"></script>
   <script src="http://canjs.com/release/latest/can.view.mustache.js"></script>
@@ -16,31 +17,10 @@
 
 
 <h2>Today's to-dos</h2>
-<div id="editor"></div>
-<div id="board"></div>
 
-<script type="text/mustache" id="todoBoard">
-{{#if length}}
-<ul>
-{{#this}}
-    <li {{data 'todo'}}>
-    	<input type="checkbox" {{#if done}}checked="checked"{{/if}}/>
-    	<span class="description{{#if done}} done{{/if}}">{{description}}</span>
-    	<span class="delete">×</span>
-    </li>
-{{/this}}
-</ul>
-{{else}}
-<div class="no-todos">No to-dos today. Youre free!</div>
-{{/if}}
-</script>  
-<script type="text/mustache" id="todoEditor">
-    <input type="text" value="{{description}}"/>
-    <img class="spinner hidden" src="spinny.gif"/>
-</script>
-    
+<script src="http://underscorejs.org/underscore-min.js"></script>
 <script src="/js/script.js"></script>
-<script src="/js/fixtures.js"></script> 
+<script src="/js/fixtures.js"></script>
 
 
 </body>
